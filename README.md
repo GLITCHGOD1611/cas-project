@@ -24,6 +24,7 @@ Build the project for production:
 ng build
 
 Output will be saved in the dist/ folder.
+
 remember this project is in development phase 
 ---
 
