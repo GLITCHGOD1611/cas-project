@@ -1,0 +1,7 @@
+<h2>LocalStorage Test</h2>
+
+<button (click)="saveData()">Save Data</button>
+<button (click)="loadData()">Load Data</button>
+<button (click)="clearData()">Clear Data</button>
+
+<p *ngIf="storedValue">Stored Value: {{ storedValue }}</p>

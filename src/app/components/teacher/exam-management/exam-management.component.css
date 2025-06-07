@@ -1,0 +1,31 @@
+/* Apply blur effect on background */
+.blur-background {
+  filter: blur(5px);
+  transition: filter 0.3s ease;
+}
+
+/* Modal background */
+.custom-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1050;
+}
+
+/* Modal Content */
+.modal-dialog {
+  background: white;
+  border-radius: 5px;
+  max-width: 500px;
+  min-width: 200px;
+  width: 100%;
+  padding: 20px;
+  z-index: 1051; /* Ensure the modal content is above the backdrop */
+}

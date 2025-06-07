@@ -1,0 +1,141 @@
+/* General Profile Styling */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.profile-card {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 450px;  /* Increased Width */
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Name & Email */
+.profile-name {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.profile-email {
+  font-size: 16px;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+/* Profile Details */
+.profile-details {
+  margin-top: 20px;
+}
+
+.detail-item {
+  background: #f1f1f1;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.detail-item h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #007bff;
+}
+
+.detail-item p {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Buttons */
+.profile-actions {
+  margin-top: 25px;
+}
+
+.edit-btn,
+.message-btn,
+.save-btn,
+.cancel-btn {
+  border: none;
+  padding: 12px 18px;
+  margin: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out;
+}
+
+.edit-btn {
+  background: #007bff;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #0056b3;
+}
+
+.message-btn {
+  background: #28a745;
+  color: white;
+}
+
+.message-btn:hover {
+  background: #218838;
+}
+
+.save-btn {
+  background: #28a745;
+  color: white;
+}
+
+.save-btn:hover {
+  background: #1e7e34;
+}
+
+.cancel-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background: #c82333;
+}
+
+/* Form Inputs */
+.profile-form {
+  text-align: left;
+}
+
+.profile-form label {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+.profile-form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+.avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}

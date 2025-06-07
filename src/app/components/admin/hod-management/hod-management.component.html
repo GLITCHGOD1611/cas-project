@@ -1,0 +1,45 @@
+<div class="container mt-4">
+    <h2>Manage HODs</h2>
+  
+    <!-- Add HOD Form -->
+    <div class="card p-4 mb-4">
+      <h5>Add New HOD</h5>
+      <form (ngSubmit)="addHOD()">
+        <div class="form-group mb-3">
+          <label for="teacher_id">Select Teacher</label>
+          <select id="teacher_id" [(ngModel)]="newHOD.teacher_id" name="teacher_id" class="form-control" required>
+            <option *ngFor="let teacher of teachers" [value]="teacher.teacher_id">
+              {{ teacher.name }} - {{ teacher.email }}
+            </option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Add HOD</button>
+      </form>
+    </div>
+  
+    <!-- HOD List -->
+    <h5>HOD List</h5>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Teacher Name</th>
+          <th>Email</th>
+          <th>Department</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hod of hods; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ hod.teacher_name }}</td>
+          <td>{{ hod.email }}</td>
+          <td>{{ hod.department }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="deleteHOD(hod.hod_id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

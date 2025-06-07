@@ -1,0 +1,50 @@
+<div class="container mt-4">
+    <h2 class="text-center">Teacher Dashboard</h2>
+  
+    <!-- Statistics Section -->
+    <div class="row text-center my-4">
+      <div class="col-md-3">
+        <div class="card shadow">
+          <div class="card-body">
+            <h6>Total Students</h6>
+            <h4 class="text-primary">{{ statistics.total_students }}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow">
+          <div class="card-body">
+            <h6>Total Assignments</h6>
+            <h4 class="text-info">{{ statistics.total_assignments }}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow">
+          <div class="card-body">
+            <h6>Total Attendance</h6>
+            <h4 class="text-warning">{{ statistics.total_attendance }}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow">
+          <div class="card-body">
+            <h6>Total Upcoming Exams</h6>
+            <h4 class="text-success">{{ statistics.total_upcoming_exams }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Charts Section -->
+    <h3 class="mt-5 text-center">Overview</h3>
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <div class="chart-container shadow">
+          <canvas id="barChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  

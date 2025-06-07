@@ -1,0 +1,168 @@
+/* You can add global styles to this file, and also import other style files */
+/* Container for the login form */
+.admin-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading styling */
+  .admin-login h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Form inputs and labels */
+  .admin-login form {
+    width: 100%;
+  }
+  
+  .admin-login form div {
+    margin-bottom: 15px;
+  }
+  
+  .admin-login form label {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .admin-login form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fdfdfd;
+    transition: border-color 0.3s ease;
+  }
+  
+  .admin-login form input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Submit button */
+  .admin-login button {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .admin-login button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive styling for smaller screens */
+  @media (max-width: 768px) {
+    .admin-login {
+      padding: 15px;
+      margin: 20px;
+    }
+  
+    .admin-login h3 {
+      font-size: 1.5rem;
+    }
+  
+    .admin-login form input,
+    .admin-login button {
+      font-size: 0.9rem;
+    }
+  }
+  
+
+  /* Universal CSS for Netflix-like theme */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #141414;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 20px;
+}
+
+.card {
+    background-color: #222;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-header, .card-body, .card-footer {
+    padding: 15px;
+}
+
+.card-header {
+    border-bottom: 1px solid #444;
+    font-size: 1.5rem;
+}
+
+.card-body {
+    font-size: 1rem;
+}
+
+.card-footer {
+    border-top: 1px solid #444;
+    text-align: right;
+}
+
+.btn-primary {
+    background-color: #e50914;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #f40612;
+}
+
+input, select, textarea {
+    background-color: #333;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #555;
+}
+
+.table {
+    color: #fff;
+    background-color: #222;
+}
+
+.table thead {
+    background-color: #333;
+}
+
+.table th, .table td {
+    border: 1px solid #444;
+    padding: 15px;
+}
+
+.table th {
+    font-weight: bold;
+}

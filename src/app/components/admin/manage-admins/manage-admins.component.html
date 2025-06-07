@@ -1,0 +1,47 @@
+<div class="manage-admins-container">
+  <app-add-admin></app-add-admin>
+
+  <h2 class="section-title">Manage Admins</h2>
+
+  <div class="responsive-table">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Contact</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let admin of admins; let i = index">
+          <td>{{ i + 1 }}</td>
+
+          <!-- Display Normal Row -->
+          <ng-container *ngIf="!isEditing || editAdminId !== admin.admin_id">
+            <td>{{ admin.name }}</td>
+            <td>{{ admin.email }}</td>
+            <td>{{ admin.contact_number }}</td>
+            <td>
+              <button class="btn edit" (click)="enableEdit(admin)">✏️ Edit</button>
+              <button class="btn delete" (click)="deleteAdmin(admin.admin_id)">🗑 Delete</button>
+            </td>
+          </ng-container>
+
+          <!-- Inline Edit Form -->
+          <ng-container *ngIf="isEditing && editAdminId === admin.admin_id">
+            <td><input [(ngModel)]="editableAdmin.name" placeholder="Name" /></td>
+            <td><input [(ngModel)]="editableAdmin.email" placeholder="Email" /></td>
+            <td><input [(ngModel)]="editableAdmin.contact_number" placeholder="Contact" /></td>
+            <td>
+              <button class="btn save" (click)="saveAdmin()">💾 Save</button>
+              <button class="btn cancel" (click)="cancelEdit()">❌ Cancel</button>
+            </td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

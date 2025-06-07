@@ -1,0 +1,88 @@
+.student-profile-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.student-profile-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.student-profile-card .avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.student-name {
+  font-size: 28px;
+  color: #1f2937;
+}
+
+.student-email {
+  color: #6b7280;
+  margin-bottom: 25px;
+}
+
+.student-details .detail-item {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.student-details .detail-item h3 {
+  font-size: 16px;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.student-details .detail-item p {
+  font-size: 15px;
+  color: #4b5563;
+}
+
+.profile-actions .message-btn {
+  background-color: #3b82f6;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.profile-actions .message-btn:hover {
+  background-color: #2563eb;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .student-profile-card {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .student-name {
+    font-size: 24px;
+  }
+
+  .student-details .detail-item h3 {
+    font-size: 14px;
+  }
+
+  .student-details .detail-item p {
+    font-size: 14px;
+  }
+}

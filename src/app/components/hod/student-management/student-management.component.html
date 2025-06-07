@@ -1,0 +1,172 @@
+<div class="container mt-4">
+    <h2>Manage Students</h2>
+  
+    <!-- Add Student Form -->
+    <div class="card p-4 mb-4">
+      <h5>Add New Student</h5>
+      <form (ngSubmit)="addStudent()">
+        <div class="form-group mb-3">
+          <label for="name">Name</label>
+          <input type="text" id="name" class="form-control" [(ngModel)]="newStudent.name" name="name" required />
+        </div>
+        <div class="form-group mb-3">
+          <label for="email">Email</label>
+          <input type="email" id="email" class="form-control" [(ngModel)]="newStudent.email" name="email" required />
+        </div>
+        <div class="form-group mb-3">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="form-control" [(ngModel)]="newStudent.password" name="password" />
+        </div>
+        <div class="form-group mb-3">
+          <label for="enrollment_number">Enrollment Number</label>
+          <input
+            type="text"
+            id="enrollment_number"
+            class="form-control"
+            [(ngModel)]="newStudent.enrollment_number"
+            name="enrollment_number"
+          />
+        </div>
+        <div class="form-group mb-3">
+          <label for="course_id">Course</label>
+          <select id="course_id" [(ngModel)]="newStudent.course_id" name="course_id" class="form-control" required>
+            <option *ngFor="let course of courses" [value]="course.course_id">
+              {{ course.course_name }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group mb-3">
+          <div class="form-group mb-3">
+            <label for="semester">Semester</label>
+            <select
+              id="semester"
+              [(ngModel)]="newStudent.semester"
+              name="semester"
+              class="form-control"
+            >
+              <option *ngFor="let sem of semesters" [value]="sem">Semester {{ sem }}</option>
+            </select>
+          </div>
+          
+        </div>
+        <div class="form-group mb-3">
+          <label for="parent_contact">Parent Contact</label>
+          <input
+            type="text"
+            id="parent_contact"
+            class="form-control"
+            [(ngModel)]="newStudent.parent_contact"
+            name="parent_contact"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Add Student</button>
+      </form>
+    </div>
+  
+    <!-- Student List -->
+    <h5>Student List</h5>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Enrollment Number</th>
+          <th>Course</th>
+          <th>Semester</th>
+          <th>Parent Contact</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ student.name }}</td>
+          <td>{{ student.email }}</td>
+          <td>{{ student.enrollment_number }}</td>
+          <td>{{ student.course_name }}</td>
+          <td>{{ student.semester }}</td>
+          <td>{{ student.parent_contact }}</td>
+          <td>
+            <button class="btn btn-warning btn-sm" (click)="openEditModal(student)">Edit</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteStudent(student.student_id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Custom Modal -->
+    <div class="custom-modal" *ngIf="showModal">
+      <div class="custom-modal-content">
+        <h5>Edit Student</h5>
+        <form>
+          <div class="form-group mb-2">
+            <label for="edit_name">Name</label>
+            <input
+              type="text"
+              id="edit_name"
+              class="form-control"
+              [(ngModel)]="selectedStudent.name"
+              name="edit_name"
+              required
+            />
+          </div>
+          <div class="form-group mb-2">
+            <label for="edit_email">Email</label>
+            <input
+              type="email"
+              id="edit_email"
+              class="form-control"
+              [(ngModel)]="selectedStudent.email"
+              name="edit_email"
+              required
+            />
+          </div>
+          <div class="form-group mb-2">
+            <label for="edit_enrollment_number">Enrollment Number</label>
+            <input
+              type="text"
+              id="edit_enrollment_number"
+              class="form-control"
+              [(ngModel)]="selectedStudent.enrollment_number"
+              name="edit_enrollment_number"
+            />
+          </div>
+          <div class="form-group mb-2">
+            <label for="edit_course_id">Course</label>
+            <select id="edit_course_id" class="form-control" [(ngModel)]="selectedStudent.course_id" name="edit_course_id">
+              <option *ngFor="let course of courses" [value]="course.course_id">
+                {{ course.course_name }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group mb-2">
+            <label for="edit_semester">Semester</label>
+            <select
+              id="edit_semester"
+              [(ngModel)]="selectedStudent.semester"
+              name="edit_semester"
+              class="form-control"
+            >
+              <option *ngFor="let sem of semesters" [value]="sem">Semester {{ sem }}</option>
+            </select>
+          </div>
+          <div class="form-group mb-2">
+            <label for="edit_parent_contact">Parent Contact</label>
+            <input
+              type="text"
+              id="edit_parent_contact"
+              class="form-control"
+              [(ngModel)]="selectedStudent.parent_contact"
+              name="edit_parent_contact"
+            />
+          </div>
+        </form>
+        <div class="modal-actions">
+          <button class="btn btn-secondary" (click)="closeModal()">Cancel</button>
+          <button class="btn btn-primary" (click)="saveStudentChanges()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

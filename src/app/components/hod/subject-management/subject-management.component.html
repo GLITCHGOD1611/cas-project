@@ -1,0 +1,158 @@
+<div class="container mt-4">
+  <h2>Manage Subjects</h2>
+
+  <!-- Add New Subject Form -->
+  <div class="card p-4 mb-4">
+    <h5>Add New Subject</h5>
+    <form (ngSubmit)="addSubject()">
+      <div class="form-group mb-3">
+        <label for="subject_name">Subject Name</label>
+        <input
+          type="text"
+          id="subject_name"
+          [(ngModel)]="newSubject.subject_name"
+          name="subjectName"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="course_id">Course</label>
+        <select
+          id="course_id"
+          [(ngModel)]="newSubject.course_id"
+          name="courseId"
+          class="form-control"
+          required
+        >
+          <option *ngFor="let course of courses" [value]="course.course_id">
+            {{ course.course_name }}
+          </option>
+        </select>
+      </div>
+      <div class="form-group mb-3">
+        <label for="teacher_id">Teacher</label>
+        <select
+          id="teacher_id"
+          [(ngModel)]="newSubject.teacher_id"
+          name="teacherId"
+          class="form-control"
+          required
+        >
+          <option *ngFor="let teacher of teachers" [value]="teacher.teacher_id">
+            {{ teacher.name }}
+          </option>
+        </select>
+      </div>
+      <div class="form-group mb-3">
+        <label for="semester">Semester</label>
+        <select
+          id="semester"
+          [(ngModel)]="newSubject.semester"
+          name="semester"
+          class="form-control"
+          required
+        >
+          <option *ngFor="let sem of semesters" [value]="sem">
+            Semester {{ sem }}
+          </option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Subject</button>
+    </form>
+  </div>
+
+  <!-- Subject List -->
+  <h5>Subject List</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Subject Name</th>
+        <th>Course</th>
+        <th>Teacher</th>
+        <th>Semester</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let subject of subjects; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ subject.subject_name }}</td>
+        <td>{{ subject.course_name }}</td>
+        <td>{{ subject.teacher_name }}</td>
+        <td>{{ subject.semester }}</td>
+        <td>
+          <button class="btn btn-warning btn-sm" (click)="openEditModal(subject)">
+            Edit
+          </button>
+          <button class="btn btn-danger btn-sm" (click)="deleteSubject(subject.subject_id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Edit Subject Modal -->
+<div class="custom-modal" *ngIf="showModal">
+  <div class="custom-modal-content">
+    <h5>Edit Subject</h5>
+    <form>
+      <div class="form-group mb-3">
+        <label for="edit_subject_name">Subject Name</label>
+        <input
+          type="text"
+          id="edit_subject_name"
+          [(ngModel)]="selectedSubject.subject_name"
+          name="editSubjectName"
+          class="form-control"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="edit_course_id">Course</label>
+        <select
+          id="edit_course_id"
+          [(ngModel)]="selectedSubject.course_id"
+          name="editCourseId"
+          class="form-control"
+        >
+          <option *ngFor="let course of courses" [value]="course.course_id">
+            {{ course.course_name }}
+          </option>
+        </select>
+      </div>
+      <div class="form-group mb-3">
+        <label for="edit_teacher_id">Teacher</label>
+        <select
+          id="edit_teacher_id"
+          [(ngModel)]="selectedSubject.teacher_id"
+          name="editTeacherId"
+          class="form-control"
+        >
+          <option *ngFor="let teacher of teachers" [value]="teacher.teacher_id">
+            {{ teacher.name }}
+          </option>
+        </select>
+      </div>
+      <div class="form-group mb-3">
+        <label for="edit_semester">Semester</label>
+        <select
+          id="edit_semester"
+          [(ngModel)]="selectedSubject.semester"
+          name="editSemester"
+          class="form-control"
+        >
+          <option *ngFor="let sem of semesters" [value]="sem">
+            Semester {{ sem }}
+          </option>
+        </select>
+      </div>
+    </form>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" (click)="closeModal()">Close</button>
+      <button class="btn btn-primary" (click)="saveSubjectChanges()">Save Changes</button>
+    </div>
+  </div>
+</div>

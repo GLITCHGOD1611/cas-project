@@ -1,0 +1,111 @@
+<div class="container mt-4">
+  <h2>Manage Teachers</h2>
+
+  <!-- Add Teacher Form -->
+  <div class="card p-4 mb-4">
+    <h5>Add New Teacher</h5>
+    <form (ngSubmit)="addTeacher()">
+      <div class="form-row mb-2">
+        <label for="name">Name <span class="text-danger">*</span></label>
+        <input type="text" id="name" class="form-control" [(ngModel)]="newTeacher.name" name="name" required />
+      </div>
+      <div class="form-row mb-2">
+        <label for="email">Email <span class="text-danger">*</span></label>
+        <input type="email" id="email" class="form-control" [(ngModel)]="newTeacher.email" name="email" required />
+      </div>
+      <div class="form-row mb-2">
+        <label for="password">Password <span class="text-danger">*</span></label>
+        <input type="password" id="password" class="form-control" [(ngModel)]="newTeacher.password" name="password" required />
+      </div>
+      <div class="form-row mb-2">
+        <label for="course_id">Course</label>
+        <select id="course_id" class="form-control" [(ngModel)]="newTeacher.course_id" name="course_id">
+          <option *ngFor="let course of courses" [value]="course.course_id">{{ course.course_name }}</option>
+        </select>
+      </div>
+      <div class="form-row mb-2">
+        <label for="qualification">Qualification</label>
+        <input type="text" id="qualification" class="form-control" [(ngModel)]="newTeacher.qualification" name="qualification" />
+      </div>
+      <div class="form-row mb-2">
+        <label for="experience_years">Experience (Years)</label>
+        <input type="number" id="experience_years" class="form-control" [(ngModel)]="newTeacher.experience_years" name="experience_years" />
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">Add Teacher</button>
+    </form>
+  </div>
+
+  <!-- Teacher List -->
+  <h5>Teachers List</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Course</th>
+        <th>Qualification</th>
+        <th>Experience</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let teacher of teachers; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ teacher.name }}</td>
+        <td>{{ teacher.email }}</td>
+        <td>{{ teacher.course_name || 'N/A' }}</td>
+        <td>{{ teacher.qualification }}</td>
+        <td>{{ teacher.experience_years }}</td>
+        <td>
+          <button class="btn btn-warning btn-sm me-2" (click)="openEditModal(teacher)">Edit</button>
+          <button class="btn btn-danger btn-sm" (click)="deleteTeacher(teacher.teacher_id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Edit Teacher Modal -->
+  <!-- Edit Teacher Modal -->
+<div class="modal fade" id="editTeacherModal" tabindex="-1" aria-labelledby="editTeacherModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editTeacherModalLabel">Edit Teacher</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group mb-2">
+            <label for="edit_name">Name <span class="text-danger">*</span></label>
+            <input type="text" id="edit_name" class="form-control" [(ngModel)]="selectedTeacher.name" name="edit_name" required />
+          </div>
+          <div class="form-group mb-2">
+            <label for="edit_email">Email <span class="text-danger">*</span></label>
+            <input type="email" id="edit_email" class="form-control" [(ngModel)]="selectedTeacher.email" name="edit_email" required />
+          </div>
+          <div class="form-group mb-2">
+            <label for="edit_course_id">Course</label>
+            <select id="edit_course_id" class="form-control" [(ngModel)]="selectedTeacher.course_id" name="edit_course_id">
+              <option *ngFor="let course of courses" [value]="course.course_id">{{ course.course_name }}</option>
+            </select>
+          </div>
+          <div class="form-group mb-2">
+            <label for="edit_qualification">Qualification</label>
+            <input type="text" id="edit_qualification" class="form-control" [(ngModel)]="selectedTeacher.qualification" name="edit_qualification" />
+          </div>
+          <div class="form-group mb-2">
+            <label for="edit_experience_years">Experience (Years)</label>
+            <input type="number" id="edit_experience_years" class="form-control" [(ngModel)]="selectedTeacher.experience_years" name="edit_experience_years" />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="saveTeacherChanges()">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>

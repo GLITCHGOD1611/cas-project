@@ -1,0 +1,78 @@
+<nav class="navbar">
+  <div class="nav-left">
+    <i class="fa-solid fa-graduation-cap fa-xl"></i>
+    <span class="brand">College Automation System</span>
+    <a class="nav-link" routerLink="/home/sidebar">
+      <i class="fa-solid fa-house"></i> Home
+    </a>
+  </div>
+
+  <div class="nav-right">
+    <!-- Admin Dropdown -->
+    <ng-container *ngIf="role === 'admin'">
+      <a routerLink="/home/admin/dashboard" class="drop-title">
+        <i class="fa-solid fa-user-shield"></i> Admin Dashboard
+      </a>
+
+      <div class="dropdown" [class.show]="activeDropdown === 'users'" (click)="toggleDropdown('users')">
+        <span class="drop-title"><i class="fa-solid fa-user-gear"></i> Manage Users</span>
+        <div class="dropdown-content">
+          <a routerLink="/home/admin/manage"><i class="fa-solid fa-user-shield"></i> Manage Admin</a>
+          <a routerLink="/home/admin/hods"><i class="fa-solid fa-user-tie"></i> Manage HODs</a>
+          <a routerLink="/home/admin/manageteacher"><i class="fa-solid fa-users"></i> Manage Teachers</a>
+        </div>
+      </div>
+
+      <div class="dropdown" [class.show]="activeDropdown === 'academics'" (click)="toggleDropdown('academics')">
+        <span class="drop-title"><i class="fa-solid fa-book-open"></i> Manage Academics</span>
+        <div class="dropdown-content">
+          <a routerLink="/home/admin/courses"><i class="fa-solid fa-book"></i> Courses</a>
+          <a routerLink="/home/admin/announcements"><i class="fa-solid fa-bullhorn"></i> Announcements</a>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- HOD Dropdown -->
+    <ng-container *ngIf="role === 'hod'">
+      <div class="dropdown" [class.show]="activeDropdown === 'hod'" (click)="toggleDropdown('hod')">
+        <span class="drop-title"><i class="fa-solid fa-user-tie"></i> HOD Panel</span>
+        <div class="dropdown-content">
+          <!-- <a routerLink="/home/hod/dashboard"><i class="fa-solid fa-gauge"></i> HOD Dashboard</a> -->
+          <a routerLink="/home/admin/manageteacher"><i class="fa-solid fa-users"></i> Manage Teachers</a>
+          <a routerLink="/home/hod/students"><i class="fa-solid fa-user-graduate"></i> Manage Students</a>
+          <a routerLink="/home/hod/subjects"><i class="fa-solid fa-book"></i> Manage Subjects</a>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- Teacher Dropdown -->
+    <ng-container *ngIf="role === 'teacher'">
+      <div class="dropdown" [class.show]="activeDropdown === 'teacher'" (click)="toggleDropdown('teacher')">
+        <span class="drop-title"><i class="fa-solid fa-chalkboard-user"></i> Teacher Panel</span>
+        <div class="dropdown-content">
+          <a routerLink="/home/teacher/profile"><i class="fa-solid fa-id-badge"></i> Teacher Profile</a>
+          <a routerLink="/home/hod/students"><i class="fa-solid fa-user-graduate"></i> Manage Students</a>
+          <a routerLink="/home/teacher/attendance"><i class="fa-solid fa-calendar-check"></i> Attendance</a>
+          <a routerLink="/home/teacher/assignments"><i class="fa-solid fa-file-alt"></i> Assignments</a>
+          <a routerLink="/home/teacher/exams"><i class="fa-solid fa-pen"></i> Exams</a>
+          <a routerLink="/home/teacher/results"><i class="fa-solid fa-clipboard-list"></i> Results</a>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- Student Links -->
+    <ng-container *ngIf="role === 'student'">
+      <a class="nav-link" routerLink="/home/student/profile"><i class="fa-solid fa-user"></i> Profile</a>
+      <!-- <a class="nav-link" routerLink="/home/subjects"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+      <a class="nav-link" routerLink="/home/courses"><i class="fa-solid fa-book"></i> Courses</a> -->
+      <a class="nav-link" routerLink="/home/assignments"><i class="fa-solid fa-tasks"></i> Assignments</a>
+    </ng-container>
+
+    <!-- Logout -->
+    <a class="logout-btn" (click)="logout()">
+      <i class="fa-solid fa-right-from-bracket"></i> Logout
+    </a>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

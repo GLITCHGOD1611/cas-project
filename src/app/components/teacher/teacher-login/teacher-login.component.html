@@ -1,0 +1,33 @@
+<div class="login-container">
+  <h3 class="text-center"><span  class="text-primary ">Teacher</span> Login</h3>
+  <form (ngSubmit)="login()">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email:</label>
+      <input
+        type="email"
+        id="email"
+        [(ngModel)]="email"
+        name="email"
+        class="form-control"
+        required
+        placeholder="Enter your email"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password:</label>
+      <input
+        type="password"
+        id="password"
+        [(ngModel)]="password"
+        name="password"
+        class="form-control"
+        required
+        placeholder="Enter your password"
+      />
+    </div>
+    <div *ngIf="errorMessage" class="text-danger mb-3">
+      {{ errorMessage }}
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Login</button>
+  </form>
+</div>

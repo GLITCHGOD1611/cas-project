@@ -1,0 +1,114 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Manage Attendance</h2>
+
+  <!-- Add Attendance Form -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h4 class="card-title">Add Attendance</h4>
+      <form (submit)="addAttendance()">
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label for="student" class="form-label">Student</label>
+            <select id="student" [(ngModel)]="newAttendance.student_id" name="student" class="form-select" required>
+              <option *ngFor="let student of students" [value]="student.student_id">{{ student.name }}</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="subject" class="form-label">Subject</label>
+            <select id="subject" [(ngModel)]="newAttendance.subject_id" name="subject" class="form-select" required>
+              <option *ngFor="let subject of subjects" [value]="subject.subject_id">{{ subject.subject_name }}</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" id="date" [(ngModel)]="newAttendance.date" name="date" class="form-control" required />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label for="status" class="form-label">Status</label>
+            <select id="status" [(ngModel)]="newAttendance.status" name="status" class="form-select" required>
+              <option value="Present">Present</option>
+              <option value="Absent">Absent</option>
+            </select>
+          </div>
+          <div class="col-md-4 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary w-100">Add Attendance</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- View Attendance Form -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h4 class="card-title">View Attendance</h4>
+      <form (submit)="viewAttendance()">
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label for="subjectView" class="form-label">Subject</label>
+            <select id="subjectView" [(ngModel)]="attendance.subject_id" name="subjectView" class="form-select" required>
+              <option *ngFor="let subject of subjects" [value]="subject.subject_id">{{ subject.subject_name }}</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="dateView" class="form-label">Date</label>
+            <input type="date" id="dateView" [(ngModel)]="attendance.date" name="dateView" class="form-control" required />
+          </div>
+          <div class="col-md-4 d-flex align-items-end">
+            <button type="submit" class="btn btn-danger w-100">View Attendance</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Attendance Data Table -->
+  <div *ngIf="attendanceData.length > 0">
+    <h3 class="mb-4">Attendance Records</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of attendanceData">
+          <td>{{ record.student_name }}</td>
+          <td>{{ record.date }}</td>
+          <td>{{ record.status }}</td>
+          <td>
+            <button (click)="editAttendance(record)" class="btn btn-warning btn-sm">Edit</button>
+            <button (click)="deleteAttendance(record.attendance_id)" class="btn btn-danger btn-sm">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Edit Attendance Form -->
+  <div *ngIf="isEditing" class="card mt-4">
+    <div class="card-body">
+      <h4 class="card-title">Edit Attendance</h4>
+      <form (submit)="updateAttendance()">
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="editStatus" class="form-label">Status</label>
+            <select id="editStatus" [(ngModel)]="editAttendanceData.status" name="editStatus" class="form-select" required>
+              <option value="Present">Present</option>
+              <option value="Absent">Absent</option>
+            </select>
+          </div>
+          <div class="col-md-6 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary w-100">Update</button>
+          </div>
+        </div>
+        <button type="button" class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>

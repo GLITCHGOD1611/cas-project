@@ -1,0 +1,80 @@
+<div class="container mt-4">
+    <h2>Manage Courses</h2>
+    <!-- <form (ngSubmit)="addCourse()">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="courseName">Course Name</label>
+            <input
+              type="text"
+              id="courseName"
+              class="form-control"
+              [(ngModel)]="newCourse.course_name"
+              name="courseName"
+              required
+            />
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="courseDescription">Course Description</label>
+            <textarea
+              id="courseDescription"
+              class="form-control"
+              [(ngModel)]="newCourse.course_description"
+              name="courseDescription"
+            ></textarea>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="duration">Duration (Years)</label>
+            <input
+              type="number"
+              id="duration"
+              class="form-control"
+              [(ngModel)]="newCourse.duration"
+              name="duration"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary mt-3" type="submit">Add Course</button>
+    </form> -->
+    <div><app-add-cource></app-add-cource></div>
+  
+    <hr />
+  
+    <table class="table table-striped mt-3">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Course Name</th>
+          <th>Course Description</th>
+          <th>Duration</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let course of courses; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ course.course_name }}</td>
+          <td>{{ course.course_description }}</td>
+          <td>{{ course.duration }}</td>
+          <td>
+            <button class="btn btn-warning btn-sm" (click)="editCourse(course)">
+              Edit
+            </button>
+            <button
+              class="btn btn-danger btn-sm"
+              (click)="deleteCourse(course.course_id)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

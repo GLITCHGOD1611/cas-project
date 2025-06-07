@@ -1,0 +1,66 @@
+.container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .stat-card {
+    border: none;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card h6 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #6c757d;
+  }
+  
+  .card h4 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .chart-container {
+    width: 100%;
+    height: 250px;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .chart-container canvas {
+    max-width: 100%;
+    height: 200px;
+  }
+  
+  h3 {
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .shadow {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-primary {
+    color: #007bff !important;
+  }
+  
+  .text-info {
+    color: #17a2b8 !important;
+  }
+  
+  .text-warning {
+    color: #ffc107 !important;
+  }
+  
+  .text-success {
+    color: #28a745 !important;
+  }
+  

@@ -1,0 +1,60 @@
+<div class="container mt-4">
+    <h2 class="dashboard-title text-center">Admin Dashboard <i class="fa-solid fa-chart-line"></i></h2>
+  
+    <!-- Statistics Cards -->
+    <div class="row text-center my-4">
+      <div class="col-md-3">
+        <div class="card stat-card shadow">
+          <div class="card-body">
+            <h6>Total Students</h6>
+            <h4 class="text-primary">{{ statistics.students }}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card stat-card shadow">
+          <div class="card-body">
+            <h6>Total Teachers</h6>
+            <h4 class="text-info">{{ statistics.teachers }}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card stat-card shadow">
+          <div class="card-body">
+            <h6>Total Courses</h6>
+            <h4 class="text-warning">{{ statistics.courses }}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card stat-card shadow">
+          <div class="card-body">
+            <h6>Total HODs</h6>
+            <h4 class="text-success">{{ statistics.hods }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Charts Section -->
+    <h3 class="mt-5 text-center" style="color: green;">Overview</h3>
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="chart-container shadow">
+          <canvas id="barChart"></canvas>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="chart-container shadow">
+          <canvas id="lineChart"></canvas>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="chart-container shadow">
+          <canvas id="pieChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  

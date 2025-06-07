@@ -1,0 +1,29 @@
+<div class="student-profile-container">
+  <div class="student-profile-card">
+    <img 
+      class="avatar" 
+     src="../../../../assets/logo.png.webp"
+      alt="Profile Image"
+    />
+
+    <h1 class="student-name">{{ studentProfile.name }}</h1>
+    <p class="student-email">{{ studentProfile.email }}</p>
+
+    <div class="student-details">
+      <div class="detail-item">
+        <h3>Enrollment Number</h3>
+        <p>{{ studentProfile.enrollment_number }}</p>
+      </div>
+      <div class="detail-item">
+        <h3>Parent Contact</h3>
+        <p>{{ studentProfile.parent_contact }}</p>
+      </div>
+    </div>
+<!-- 
+    <div class="profile-actions">
+      <button class="message-btn">Message</button>
+    </div>
+  </div> -->
+</div>
+
+ <!-- [src]="studentProfile.gender === 'Male' ? 'assets/male-avatar.png' : 'assets/female-avatar.png'" -->

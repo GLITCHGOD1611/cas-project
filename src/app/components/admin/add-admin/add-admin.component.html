@@ -1,0 +1,27 @@
+<div class="add-admin-container">
+  <h2 class="form-title">➕ Add Admin</h2>
+
+  <form (ngSubmit)="addAdmin()">
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" [(ngModel)]="admin.name" name="name" required />
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" [(ngModel)]="admin.email" name="email" required />
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" [(ngModel)]="admin.password" name="password" required />
+    </div>
+
+    <div class="form-group">
+      <label>Contact Number</label>
+      <input type="number" [(ngModel)]="admin.contact_number" name="contact_number" required />
+    </div>
+
+    <button type="submit">Add Admin</button>
+  </form>
+</div>

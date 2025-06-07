@@ -1,0 +1,55 @@
+<div class="profile-container">
+  <div class="profile-card">
+    <img 
+    class="avatar" 
+   src="../../../../assets/logo.png.webp"
+    alt="Profile Image"
+  />
+    <!-- 🔹 View Mode -->
+    <div *ngIf="!isEditing">
+      <h1 class="profile-name">{{ teacherProfile.name }}</h1>
+      <p class="profile-email">{{ teacherProfile.email }}</p>
+
+      <div class="profile-details">
+        <div class="detail-item">
+          <h3>Qualification</h3>
+          <p>{{ teacherProfile.qualification }}</p>
+        </div>
+        <div class="detail-item">
+          <h3>Experience</h3>
+          <p>{{ teacherProfile.experience_years }} years</p>
+        </div>
+      </div>
+<!-- 
+      <div class="profile-actions">
+        <button class="edit-btn" (click)="toggleEdit()">Edit Profile</button>
+        <button class="message-btn">Message</button>
+      </div>
+    </div> -->
+
+    <!-- 🔹 Edit Mode -->
+    <!-- <div *ngIf="isEditing">
+      <h1 class="profile-name">Edit Profile</h1>
+
+      <div class="profile-form">
+        <label>Name:</label>
+        <input type="text" [(ngModel)]="teacherProfile.name">
+
+        <label>Email:</label>
+        <input type="email" [(ngModel)]="teacherProfile.email">
+
+        <label>Qualification:</label>
+        <input type="text" [(ngModel)]="teacherProfile.qualification">
+
+        <label>Experience (Years):</label>
+        <input type="number" [(ngModel)]="teacherProfile.experience_years">
+
+        <div class="profile-actions">
+          <button class="save-btn" (click)="saveProfile()">Save</button>
+          <button class="cancel-btn" (click)="toggleEdit()">Cancel</button>
+        </div>
+      </div>
+    </div>
+     -->
+  </div>
+</div>

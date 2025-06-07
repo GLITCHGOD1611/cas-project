@@ -1,0 +1,128 @@
+.manage-admins-container {
+    max-width: 1200px;
+    background: #ffffff;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .section-title {
+    text-align: center;
+    color: #4f46e5;
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .responsive-table {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  thead {
+    background-color: #4f46e5;
+    color: #ffffff;
+  }
+  
+  th, td {
+    padding: 16px;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+  }
+  
+  tbody tr:hover {
+    background-color: #f3f4f6;
+    transition: background-color 0.3s;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    background-color: #f9fafb;
+    color: #1f2937;
+    font-size: 15px;
+  }
+  
+  input:focus {
+    border-color: #4f46e5;
+    background-color: #fff;
+    outline: none;
+  }
+  
+  .btn {
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+  }
+  
+  .btn.edit { background-color: #4f46e5; color: #fff; }
+  .btn.delete { background-color: #ef4444; color: #fff; }
+  .btn.save { background-color: #22c55e; color: #fff; }
+  .btn.cancel { background-color: #9ca3af; color: #fff; }
+  
+  .btn:hover {
+    opacity: 0.85;
+  }
+  
+  /* ✅ Fully Responsive */
+  @media (max-width: 768px) {
+    .manage-admins-container {
+      padding: 20px;
+    }
+  
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+  
+    thead {
+      display: none;
+    }
+  
+    tr {
+      margin-bottom: 15px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+  
+    td {
+      text-align: left;
+      padding: 12px;
+      border: none;
+      position: relative;
+    }
+  
+    td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 12px;
+      font-weight: 600;
+      color: #374151;
+    }
+  
+    td:nth-child(1)::before { content: '#'; }
+    td:nth-child(2)::before { content: 'Name'; }
+    td:nth-child(3)::before { content: 'Email'; }
+    td:nth-child(4)::before { content: 'Contact'; }
+    td:nth-child(5)::before { content: 'Actions'; }
+  }
+  

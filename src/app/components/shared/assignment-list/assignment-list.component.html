@@ -1,0 +1,25 @@
+<div class="assignment-list-container">
+  <h1>Assignments</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Subject</th>
+        <th>Teacher</th>
+        <th>Due Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let assignment of assignments; let i = index">
+        <td>{{ i + 1 }}</td>  <!-- Display row number -->
+        <td>{{ assignment.title }}</td>
+        <td>{{ assignment.description }}</td>
+        <td>{{ getSubjectName(assignment.subject_id) }}</td>  <!-- ✅ Get subject name -->
+        <td>{{ getTeacherName(assignment.teacher_id) }}</td>  <!-- ✅ Get teacher name -->
+        <td>{{ assignment.due_date | date:'shortDate' }}</td> <!-- ✅ Format the date -->
+      </tr>
+    </tbody>
+  </table>
+</div>
