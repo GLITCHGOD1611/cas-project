@@ -2,7 +2,7 @@
 
 A web application built with **Angular 18**.
 
-![CAS Preview](src/assets/cas-preview.png)
+![CAS Preview](src/assets/login.png)
 
 ---
 
