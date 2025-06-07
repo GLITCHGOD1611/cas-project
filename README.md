@@ -1,27 +1,52 @@
 # CAS
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.9.
+A web application built with **Angular 18**.
 
-## Development server
+![CAS Preview](src/assets/cas-preview.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## 🚀 Development
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Start the development server:
 
-## Build
+```
+ng serve
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Visit: [http://localhost:4200/](http://localhost:4200/)  
+The app reloads automatically when source files change.
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🛠️ Build
 
-## Running end-to-end tests
+Build the project for production:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
+ng build
+```
 
-## Further help
+Output will be saved in the `dist/` folder.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+
+## 🧪 Testing
+
+Run unit tests:
+
+```
+ng test
+```
+
+---
+
+## ℹ️ Help
+
+Angular CLI help:
+
+```
+ng help
+```
+
+More info: [Angular CLI Docs](https://angular.dev/tools/cli)
