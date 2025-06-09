@@ -10,11 +10,9 @@ A web application built with **Angular 18**.
 
 Start the development server:
 
-```
 ng serve
-```
 
-Visit: [http://localhost:4200/](http://localhost:4200/)  
+Visit: http://localhost:4200/  
 The app reloads automatically when source files change.
 
 ---
@@ -23,21 +21,18 @@ The app reloads automatically when source files change.
 
 Build the project for production:
 
-```
 ng build
-```
 
-Output will be saved in the `dist/` folder.
+Output will be saved in the dist/ folder.
 
+remember this project is in development phase 
 ---
 
 ## 🧪 Testing
 
 Run unit tests:
 
-```
 ng test
-```
 
 ---
 
@@ -45,8 +40,30 @@ ng test
 
 Angular CLI help:
 
-```
 ng help
-```
 
-More info: [Angular CLI Docs](https://angular.dev/tools/cli)
+More info: https://angular.dev/tools/cli
+
+---
+
+## 🗄️ Database
+
+This project uses a **MySQL** database.  
+The SQL dump is located at:
+
+database/cas2.sql
+
+### 🔄 How to Import:
+
+1. Open MySQL Workbench (or any MySQL client)
+2. Connect to your local MySQL server
+3. Open a new SQL tab
+4. Run:
+
+SOURCE path/to/database/cas2.sql;
+
+(Replace `path/to` with the actual full path on your system)
+
+Or, use the Import option in MySQL Workbench to restore the database file.
+
+✅ Make sure MySQL server is running before importing.
