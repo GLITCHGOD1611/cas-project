@@ -24,7 +24,7 @@ const app = express();
 // Enable CORS for all routes
 app.use(
     cors({
-        origin: 'http://localhost:4200', // Only allow requests from your Angular frontend
+        origin: '*',// Only allow requests from your Angular frontend
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         allowedHeaders: ['Content-Type', 'Authorization'],
     })
